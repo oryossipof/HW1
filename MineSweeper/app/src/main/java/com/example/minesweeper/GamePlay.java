@@ -20,7 +20,9 @@ public class GamePlay extends Activity {
     public static boolean flag = false;
     private Thread t;
     private Handler handler = new Handler();
+    private Runnable runnable;
     public static int j = 0;
+    public  int i = 0;
 
 
 
@@ -38,37 +40,41 @@ public class GamePlay extends Activity {
 
         numberOfMinesView = (TextView) findViewById(R.id.NumOfFlagsText);
         numberOfMinesView.setText("" + numberOfMines);
-        startTimer();
+        tickOnMainThreadForever();
+
+
+    }
+
+    private void tickOnMainThreadForever() {
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                tick();
+                handler.postDelayed(this, 1000);
+            }
+        };
+
+        runnable.run();
 
     }
 
 
-    int i = 0;
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            i++;
-            j = i;
-            TextView Timetext = (TextView)findViewById(R.id.TimeText);
-            Timetext.setText(""+i);
-            startTimer();
-        }
-    };
+    private void tick() {
 
-    public void startTimer() {
-        handler.postDelayed(runnable, 1000);
+        TextView Timetext = (TextView) findViewById(R.id.TimeText);
+        Timetext.setText("" + i);
+        i++;
+        j = i;
     }
 
-    public void cancelTimer() {
-        handler.removeCallbacks(runnable);
-    }
+
 
     @Override
     protected void onStop() {
         super.onStop();
+        i = 0 ;
         handler.removeCallbacks(runnable);
     }
-
 
     @Override
     protected void onPause() {

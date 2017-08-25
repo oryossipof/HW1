@@ -96,7 +96,10 @@ public class Logic {
         getCellPos(xPos, yPos).setFlagClick(!isFlagged);
         getCellPos(xPos, yPos).invalidate();
 
+        checkEnd();
+
     }
+
 
 
     public void click(int x, int y) {

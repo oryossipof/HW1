@@ -2,7 +2,6 @@ package com.example.minesweeper;
 
 import android.content.Intent;
 import android.nfc.Tag;
-import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,16 +29,9 @@ public class EndGame extends AppCompatActivity {
         if (result.equals("won")) {
 
             timeText.setText(timeText.getText() + "" + timer);
-
-            /*insert your name and take your location*/
-
-
         }
-        else {
+        else
             timeText.setText("");
-            TextView enterNameLabel = (TextView)findViewById(R.id.enterName);
-            enterNameLabel.setVisibility(TextView.INVISIBLE);
-        }
 
 
 

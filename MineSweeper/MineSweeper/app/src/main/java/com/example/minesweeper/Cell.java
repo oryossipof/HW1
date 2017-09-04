@@ -68,7 +68,6 @@ public class Cell extends  BaseCell implements View.OnClickListener , View.OnLon
                 if(getValue() == -1)
                 {
                     drawExplodedBomb(canvas);
-
                 }
                 else
                 {

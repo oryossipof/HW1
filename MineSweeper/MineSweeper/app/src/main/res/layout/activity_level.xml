@@ -17,55 +17,51 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mine Sweeper"
-            android:text="Mine Sweeper"
+            android:hint="Select Difficulty"
+            android:text="Select Difficulty"
             android:textAlignment="center"
 
             android:textSize="80px"
-            tools:text="Mine Sweeper"
+            tools:text="Select Difficulty"
             android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="61dp" />
 
         <Button
-            android:id="@+id/play_button"
+            android:id="@+id/easy"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/but"
             android:elevation="0dp"
-            android:text="Play"
+            android:text="Easy"
             android:layout_below="@+id/textView"
             android:layout_alignParentStart="true"
-
-            android:layout_marginTop="50dp" />
-
+            android:background="@drawable/but"
+            android:layout_marginTop="104dp" />
 
         <Button
-            android:id="@+id/records_button"
+            android:id="@+id/mid"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/but"
             android:elevation="0dp"
-            android:text="Records Table"
-            android:layout_below="@+id/play_button"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="63dp" />
+            android:text="medium"
+            android:layout_below="@+id/easy"
+            android:background="@drawable/but"
+            android:layout_marginTop="33dp"
+            android:layout_alignParentStart="true" />
 
         <Button
-            android:id="@+id/exit_bt"
+            android:id="@+id/Hard"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/but"
             android:elevation="0dp"
-            android:text="Exit"
-            android:layout_below="@id/records_button"
+            android:text="Hard"
+            android:layout_below="@+id/mid"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="63dp" />
+            android:background="@drawable/but"
+            android:layout_marginTop="33dp" />
+
 
     </RelativeLayout>
-
-
-
 
 </LinearLayout>

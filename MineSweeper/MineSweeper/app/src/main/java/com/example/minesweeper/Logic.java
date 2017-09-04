@@ -2,14 +2,11 @@ package com.example.minesweeper;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.BounceInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,7 +58,6 @@ public class Logic {
         Print.printM(generatorGrid, width, height);
         setGrid(context, generatorGrid);
 
-
     }
 
     private void setGrid(Context context, final int[][] grid) {
@@ -100,10 +96,7 @@ public class Logic {
         getCellPos(xPos, yPos).setFlagClick(!isFlagged);
         getCellPos(xPos, yPos).invalidate();
 
-        checkEnd();
-
     }
-
 
 
     public void click(int x, int y) {
@@ -182,7 +175,7 @@ public class Logic {
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         intent.putExtra("result", "Lost");
 
-       // context.startActivity(intent);
+        context.startActivity(intent);
 
         for (int i = 0; i < width; i++) {
 
@@ -194,29 +187,7 @@ public class Logic {
             }
         }
 
-
-
-
-        for (int i = 0; i < width; i++) {
-
-
-
-
-            for (int j = 0; j < height; j++) {
-
-                getCellPos(i,j).animate()
-                        .translationY(3000)
-                        .setInterpolator(new AccelerateInterpolator())
-                       // .setInterpolator(new BounceInterpolator())
-                        .setDuration(5000);
-
-            }
-        }
-
-
     }
-
-
 }
 
 
